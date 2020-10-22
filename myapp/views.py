@@ -19,7 +19,7 @@ def home(request):
     #p = SoundPlayer('/home/pi/PythonProg/Pbday/myapp/static/myapp/media/H2.mp3', 1)
     #p.play()
     #playsound.playsound('/home/pi/PythonProg/Pbday/myapp/static/myapp/media/H2.mp3', True)
-    #playsound.playsound('myapp/static/myapp/media/H2.mp3', False)
+    playsound.playsound('myapp/static/myapp/media/H2.mp3', False)
     return render(request, "myapp/home.html")
 
 
