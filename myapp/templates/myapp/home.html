@@ -1,0 +1,61 @@
+{% extends "myapp/base.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<body>
+{% block content %}
+{% include "myapp/base.html" %}
+
+<!--<div class="container nav-wrapper">-->
+    <div class="row">
+        <!--        <div class="col s1 m2">
+                    <img width = "500" style="cursor:default" src="{% static 'myapp/images/main4.png' %}">
+                </div>-->
+
+
+        <div class="col s12 m4">
+            <div style="float:left; ">
+                <img height="450" class="materialboxed" style="cursor:default"
+                     src="{% static 'myapp/images/hb3.gif' %}">
+            </div>
+        </div>
+                <div class="col s12 m4">
+            <center>
+                <img width="500" alt="centered image" src="{% static 'myapp/images/main.png' %}">
+            </center>
+        </div>
+        <div class="col s12 m4">
+            <div style="float:right; ">
+                <img height="450" class="materialboxed" style="cursor:default"
+                     src="{% static 'myapp/images/hb3.gif' %}">
+            </div>
+        </div>
+    </div>
+<!--</div>-->
+
+
+<!--    <div style="width:1200px">
+
+        <div style="float:left; ">
+            <img class="materialboxed" width="450" height="550" style="cursor:default" src="{% static 'myapp/images/main4.png' %}">
+        </div>
+        <div style="float:right;">
+            <span style="cursor:default"></span>
+            <img class="materialboxed" width="450" height="550" style="cursor:default" src="{% static 'myapp/images/main.png' %}">
+        </div>
+
+        <div style="float:left;">
+            <img class="materialboxed" width="450" style="cursor:default" src="{% static 'myapp/images/hb3.gif' %}">
+        </div>
+        <div style="float:right;">
+            <img class="materialboxed" width="450" style="cursor:default" src="{% static 'myapp/images/hb3.gif' %}">
+        </div>
+    </div>
+</div>-->
+
+
+{% endblock %}
+</body>
+
+</html>

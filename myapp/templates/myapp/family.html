@@ -1,0 +1,33 @@
+{% extends "myapp/base.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<body>
+{% block content %}
+{% include "myapp/base.html" %}
+<div class="container nav-wrapper">
+    <h4 class = "blue-text" align = "center">Time for some family time</h4>
+</div>
+<div class="container nav-wrapper">
+    <div class="row">
+        {% for f in family %}
+
+            <div class="col s12 m4">
+                <div class="card small">
+                    <div class="card-image waves-effect waves-block waves-light" >
+                        <a href = "{% url 'myapp:detail' f.0%}"><img class="activator" src={{f.1}}></a>
+                    </div>
+                    <div class="card-content">
+                        <a href = "{% url 'myapp:detail' f.0%}"><span class="card-title activator grey-text text-darken-4">{{f.0}}</span></a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}
+</body>
+
+</html>
