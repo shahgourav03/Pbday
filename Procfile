@@ -1,1 +1,1 @@
-web: gunicorn Pbday.wsgi
+web: gunicorn locallibrary.wsgi --log-file -

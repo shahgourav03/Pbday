@@ -4,10 +4,13 @@ from .models import Friends, Family, Lovelies
 import playsound
 import pygame
 import subprocess
+
 # Create your views here.
 
 
 def home(request):
+
+
     # pygame.mixer.init()
     # pygame.mixer.music.load("/home/pi/PythonProg/Pbday/myapp/static/myapp/media/H2.ogg")
     # print("Playing")
@@ -19,7 +22,7 @@ def home(request):
     #p = SoundPlayer('/home/pi/PythonProg/Pbday/myapp/static/myapp/media/H2.mp3', 1)
     #p.play()
     #playsound.playsound('/home/pi/PythonProg/Pbday/myapp/static/myapp/media/H2.mp3', True)
-    playsound.playsound('myapp/static/myapp/media/H2.mp3', False)
+    playsound.playsound('C:/Users/xashagou/Desktop/PythonProg/django/Pbday/myapp/static/myapp/media/H2.mp3', False)
     return render(request, "myapp/home.html")
 
 
@@ -80,7 +83,7 @@ def detailView(request, name):
         image_path = data.image.url[1:]
     else:
         message = "................."
-        image_path = ('myapp/static/myapp/images/main.png')
+        image_path = ('C:/Users/xashagou/Desktop/PythonProg/django/Pbday/myapp/static/myapp/images/main.png')
         #image_path = ('/home/pi/PythonProg/Pbday/myapp/static/myapp/images/main.png')
 
     with open(image_path, "rb") as image_file:
