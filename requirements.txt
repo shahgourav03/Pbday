@@ -70,7 +70,7 @@ PyGetWindow==0.0.8
 PyInstaller==3.5
 PyMsgBox==1.0.8
 pyodbc==4.0.26
-pyparsing==2.4.1
+
 pyperclip==1.8.0
 pypiwin32==223
 PyQt5==5.15.0
