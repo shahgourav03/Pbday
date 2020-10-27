@@ -17,21 +17,35 @@
     <!--<meta http-equiv="refresh" content="5">-->
 </head>
 
-<body style="background-color:black;">
-
+<body style="background-color:black; ">
+<!--style="background-color:black; "-->
+<!--class="black"-->
 
 {% block content %}
-<nav class = "black">
+<nav class="black">
     <div class="container nav-wrapper">
-        <ul id="nav-mobile" class="right">
-            <li  id = 'home'><a href="/">Home</a></li>
-            <li  id = 'friends'><a href="/friends">Friends</a></li>
-            <li  id = 'family'><a href="/family">Family</a></li>
-            <li  id = 'lovelies'><a href="/lovelies">Lovelies</a></li>
+        <ul id="nav-mobile" class="left">
+            <li id='home'><a href="/">Home</a></li>
+            <li id='friends'><a href="/friends">Friends</a></li>
+            <li id='family'><a href="/family">Family</a></li>
+            <li id='lovelies'><a href="/lovelies">Lovelies</a></li>
         </ul>
 
+        <div class="input-field right white">
+            <form action = "{% url 'myapp:new_search' %}"  method="post">
+            {% csrf_token %}
+
+                <input id="search" type="search" name ="hahaha" placeholder="Search">
+<!--                <label class="label-icon" ><i class="material-icons">search</i></label>-->
+<!--                <i class="material-icons">close</i>-->
+
+            </form>
+        </div>
     </div>
+
 </nav>
+
+
 <!--
 <audio autoplay>
     <source src="/static/myapp/media/H2.mp3" type="audio/mp3">

@@ -2,28 +2,25 @@ import base64
 from django.shortcuts import render
 from .models import Friends, Family, Lovelies
 import playsound
-import pygame
+# import pygame
 import subprocess
+
 
 # Create your views here.
 
-
 def home(request):
-
-
-    # pygame.mixer.init()
-    # pygame.mixer.music.load("/home/pi/PythonProg/Pbday/myapp/static/myapp/media/H2.ogg")
-    # print("Playing")
-    # pygame.mixer.music.set_volume(1.0)
-    # pygame.mixer.music.play()
-
-    #subprocess.check_call("ntpdate")
-    #subprocess.call(['sudo omxplayer --no-keys /home/pi/PythonProg/Pbday/myapp/static/myapp/media/H2.mp3 &'], shell=True)
-    #p = SoundPlayer('/home/pi/PythonProg/Pbday/myapp/static/myapp/media/H2.mp3', 1)
-    #p.play()
-    #playsound.playsound('/home/pi/PythonProg/Pbday/myapp/static/myapp/media/H2.mp3', True)
-    playsound.playsound('myapp/static/myapp/media/H2.mp3', True)
+    # playsound.playsound('myapp/static/myapp/media/H2.mp3', True)
     return render(request, "myapp/home.html")
+
+
+def new_search(request):
+    print("hereeee")
+    search = request.POST.get('hahaha')
+    print(search)
+    stuff_for_frontend = {
+        'search': search
+    }
+    return render(request, "myapp/new_search.html", stuff_for_frontend)
 
 
 def friends(request):
@@ -68,7 +65,7 @@ def lovelies(request):
 
 
 def detailView(request, name):
-    data=[]
+    data = []
 
     if Friends.objects.filter(name=name):
         data = (Friends.objects.get(name=name))
@@ -78,22 +75,21 @@ def detailView(request, name):
         data = (Lovelies.objects.get(name=name))
 
     if data != []:
-    #if True:
+        # if True:
         message = data.message
         image_path = data.image.url[1:]
     else:
         message = "................."
         image_path = ('myapp/static/myapp/images/main.png')
-        #image_path = ('/home/pi/PythonProg/Pbday/myapp/static/myapp/images/main.png')
+        # image_path = ('/home/pi/PythonProg/Pbday/myapp/static/myapp/images/main.png')
 
     with open(image_path, "rb") as image_file:
         image_data = base64.b64encode(image_file.read()).decode('utf-8')
 
     detail = {
-        'name':name,
-        'photo':image_data,
-        'message':message
+        'name': name,
+        'photo': image_data,
+        'message': message
     }
 
     return render(request, "myapp/detail.html", detail)
-
