@@ -22,7 +22,7 @@ def home(request):
     #p = SoundPlayer('/home/pi/PythonProg/Pbday/myapp/static/myapp/media/H2.mp3', 1)
     #p.play()
     #playsound.playsound('/home/pi/PythonProg/Pbday/myapp/static/myapp/media/H2.mp3', True)
-    playsound.playsound('C:/Users/xashagou/Desktop/PythonProg/django/Pbday/myapp/static/myapp/media/H2.mp3', False)
+    playsound.playsound('myapp/static/myapp/media/H2.mp3', True)
     return render(request, "myapp/home.html")
 
 
@@ -83,7 +83,7 @@ def detailView(request, name):
         image_path = data.image.url[1:]
     else:
         message = "................."
-        image_path = ('C:/Users/xashagou/Desktop/PythonProg/django/Pbday/myapp/static/myapp/images/main.png')
+        image_path = ('myapp/static/myapp/images/main.png')
         #image_path = ('/home/pi/PythonProg/Pbday/myapp/static/myapp/images/main.png')
 
     with open(image_path, "rb") as image_file:
