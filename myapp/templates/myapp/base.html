@@ -31,14 +31,10 @@
             <li id='lovelies'><a href="/lovelies">Lovelies</a></li>
         </ul>
 
-        <div class="input-field right white">
-            <form action = "{% url 'myapp:new_search' %}"  method="post">
+        <div class="input-field right black">
+            <form action = "{% url 'myapp:new_search'%}"  method="post">
             {% csrf_token %}
-
-                <input id="search" type="search" name ="hahaha" placeholder="Search">
-<!--                <label class="label-icon" ><i class="material-icons">search</i></label>-->
-<!--                <i class="material-icons">close</i>-->
-
+                <input id="search" type="search" name ="searchwindow" placeholder="Search">
             </form>
         </div>
     </div>

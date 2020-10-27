@@ -1,0 +1,25 @@
+{% extends "myapp/base.html" %}
+{% load static %}
+
+!DOCTYPE html>
+<html>
+<body>
+{% block content %}
+{% include "myapp/base.html" %}
+
+<div class="container nav-wrapper">
+    <h4 align="center" class="green-text">A message from {{name}}</h4>
+
+    <div class="card blue-grey darken-1 hoverable">
+        <div align="center">
+            <img src="data:image/png;base64,{{ photo }}" width="900">
+        </div>
+    </div>
+    <div class="center" >
+        <p style="font-size:24px; color:pink; font-family:Helvetica Neue; font-style:italic">{{message}}</p>
+    </div>
+</div>
+
+{% endblock content %}
+</body>
+</html>

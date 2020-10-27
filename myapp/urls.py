@@ -9,6 +9,7 @@ urlpatterns = [
     path('friends', views.friends, name='friends'),
     path('family', views.family, name='family'),
     path('lovelies', views.lovelies, name='lovelies'),
-    path('<name>', views.detailView, name='detail'),
-    path('new_search', views.lovelies, name='new_search')
+    path('found', views.searchFound, name='new_search'),
+    path('<name>', views.detailView, name='detail')
+
 ]
