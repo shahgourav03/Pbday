@@ -22,26 +22,24 @@
 <!--class="black"-->
 
 {% block content %}
-<nav class="black">
-    <div class="container nav-wrapper">
-        <ul id="nav-mobile" class="left">
+<nav class="black" style="font-size:24">
+    <div class="container nav-wrapper" >
+        <ul id="nav-mobile" class="left" >
             <li id='home'><a href="/">Home</a></li>
             <li id='friends'><a href="/friends">Friends</a></li>
             <li id='family'><a href="/family">Family</a></li>
             <li id='lovelies'><a href="/lovelies">Lovelies</a></li>
         </ul>
 
-        <div class="input-field right black">
+        <div class="input-field right black" >
             <form action = "{% url 'myapp:new_search'%}"  method="post">
             {% csrf_token %}
-                <input id="search" type="search" name ="searchwindow" placeholder="Search">
+                <input style = "color:white" class = "black" id="search" type="search" name ="searchwindow" placeholder="Search">
             </form>
         </div>
     </div>
 
 </nav>
-
-
 <!--
 <audio autoplay>
     <source src="/static/myapp/media/H2.mp3" type="audio/mp3">
