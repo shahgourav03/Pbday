@@ -11,5 +11,4 @@ urlpatterns = [
     path('lovelies', views.lovelies, name='lovelies'),
     path('found', views.searchFound, name='new_search'),
     path('<name>', views.detailView, name='detail')
-
 ]

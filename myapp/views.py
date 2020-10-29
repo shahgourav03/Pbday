@@ -19,7 +19,13 @@ def friends(request):
 
     for f in Friends.objects.all():
         a = f.image
-        friendsData.append((f.name, a.url[7:], f.message))
+        if (a):
+            imageUrl = a.url[7:]
+        else:
+            print("No Url")
+            imageUrl= "/static/myapp/images/main.png"
+
+        friendsData.append((f.name, imageUrl, f.message))
 
     stuff_to_frontend = {
         'friends': friendsData,
@@ -65,7 +71,7 @@ def searchFound(request):
     elif Lovelies.objects.filter(name=name):
         data = (Lovelies.objects.get(name=name))
 
-    if data != []:
+    if data:
         # if True:
         message = data.message
         image_path = data.image.url[1:]
@@ -95,18 +101,18 @@ def detailView(request, name):
     elif Lovelies.objects.filter(name=name):
         data = (Lovelies.objects.get(name=name))
 
-    if data != []:
-        # if True:
+    if data:
         message = data.message
         image_path = data.image.url[1:]
+
     else:
         message = "................."
         image_path = ('myapp/static/myapp/images/main.png')
-        # image_path = ('/home/pi/PythonProg/Pbday/myapp/static/myapp/images/main.png')
 
     with open(image_path, "rb") as image_file:
         image_data = base64.b64encode(image_file.read()).decode('utf-8')
 
+    #print(image_data)
     detail = {
         'name': name,
         'photo': image_data,
@@ -114,3 +120,6 @@ def detailView(request, name):
     }
 
     return render(request, "myapp/detail.html", detail)
+
+
+
