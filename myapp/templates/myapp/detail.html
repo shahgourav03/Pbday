@@ -8,18 +8,17 @@
 {% include "myapp/base.html" %}
 
 <div class="container nav-wrapper">
-    <h4 align="center" class="green-text">A message from {{name}}</h4>
+    <h4 align="center" class="green-text">Birthday wishes from {{name}}</h4>
 
     <div class="row">
         <div class="col s6">
             <div class="card black hoverable">
                 <div align="left">
-                    <img src="data:image/png;base64,{{ photo }}" width="600">
+                    <img src="data:image/png;base64,{{ photo }}" width = "600" height="auto">
                 </div>
             </div>
         </div>
         <div class="col s6">
-
             <div align="center">
                 <p style="font-size:24px; color:white; font-family:Helvetica Neue; font-style:italic">{{message}}</p>
             </div>
