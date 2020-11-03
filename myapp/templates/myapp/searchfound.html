@@ -8,7 +8,7 @@
 {% include "myapp/base.html" %}
 
 <div class="container nav-wrapper">
-    <h4 align="center" class="green-text">A message from {{name}}</h4>
+    <h4 align="center" class="green-text">{{name}}</h4>
 
     <div class="row">
         <div class="col s6">
@@ -20,9 +20,10 @@
         </div>
         <div class="col s6">
 
-            <div align="center">
-                <p style="font-size:24px; color:white; font-family:Helvetica Neue; font-style:italic">{{message}}</p>
-            </div>
+                <div align="center" style="font-size:24px; color:white; font-family:Helvetica Neue; font-style:italic">
+                    <p>{{message|linebreaks}}</p>
+<!--                    <p style="font-size:24px; color:white; font-family:Helvetica Neue; font-style:italic">{{message|linebreaks}}</p>-->
+                </div>
 
         </div>
 

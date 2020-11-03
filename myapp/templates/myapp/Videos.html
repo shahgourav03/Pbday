@@ -7,19 +7,18 @@
 {% block content %}
 {% include "myapp/base.html" %}
 <div class="container nav-wrapper">
-    <h4 class = "green-text" align = "center">Here are the wished from your besties</h4>
+    <h4 class = "green-text" align = "center">The cutest of all.....</h4>
 </div>
 <div class="container nav-wrapper">
     <div class="row">
-        {% for v in videosData %}
+        {% for v in videodata %}
             <div class="col s12 m4">
                 <div class="card small">
-<!--                    <div class="card-image waves-effect waves-block waves-light" >
-                        <a href = "{% url 'myapp:videodetail' v.0%}"><img class="activator" src={{v.1}}></a>
-                    </div>-->
+                    <div class="card-image waves-effect waves-block waves-light" >
+                        <a href = "{% url 'myapp:detail' v.1%}"><img class="activator" src={{v.2}}></a>
+                    </div>
                     <div class="card-content">
-<!--                        <a href = "{% url 'myapp:videodetail' v.0%}"><span class="card-title activator grey-text text-darken-4">{{v.0}}</span></a>-->
-                        <a href = "{% url 'myapp:videodetail' v.0%}"><span class="card-title activator grey-text text-darken-4">{{v.0}}</span></a>
+                        <a href = "{% url 'myapp:detail' v.1%}"><span class="card-title activator grey-text text-darken-4">{{v.0}}</span></a>
                     </div>
                 </div>
             </div>

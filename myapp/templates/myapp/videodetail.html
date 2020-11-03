@@ -8,17 +8,32 @@
 {% include "myapp/base.html" %}
 
 <div class="container nav-wrapper">
-    <h4 align="center" class="green-text">A video from {{name}}</h4>
+    <h4 align="center" class="green-text">{{name}}</h4>
 
+    {% if video_present == True %}
     <div class="row">
-        <div class="col s6">
-            <div class="card black hoverable">
-                <video width='1000' controls>
-                    <source src="Pbday/myapp/static/myapp/videos/VID-20201026-WA0010_tFrlX8I.mp4">
-                </video>
+            <div class="col s12">
+                <div class="card black hoverable">
+                    <div align="center">
+                        <video class='center' width='400' controls>
+                            <source src="{{video_path}}">
+                        </video>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    {% else %}
+        <div class="row">
+            <div class="col s12">
+                <div class="card black hoverable">
+                    <div align="center">
+                        <img src="data:image/png;base64,{{ photo }}" width = "700" height="auto">
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    {% endif %}
 </div>
 {% endblock content %}
 </body>
