@@ -60,7 +60,10 @@ def searchFound(request):
     displaylist = []
 
     # try:
-    #     data.append((Friends.objects.get(name__startswith=name)))
+    #     for f in Friends.objects.get(name__startswith=name):
+    #         data.append((f.name, f.image.url[7:]))
+    #         print(f)
+    #     print(data)
     # except:
     #     print("No Friends found")
     #
