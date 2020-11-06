@@ -2,13 +2,13 @@ import base64
 from django.shortcuts import render
 from .models import Friends, Family, Lovelies, Video
 from django.contrib.postgres.lookups import Unaccent
-import playsound
+#import playsound
 
 
 # Create your views here.
 
 def home(request):
-    playsound.playsound('myapp/static/myapp/media/H2.mp3', False)
+    #playsound.playsound('myapp/static/myapp/media/H2.mp3', False)
     return render(request, "myapp/home.html")
 
 
